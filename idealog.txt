@@ -12,6 +12,7 @@
 	f. prestige to next age
 	g. must be able to view "historical information"
 	   and have option to pause the game to read it
+	h. super effect - special for different ages
 
 3. Age generations:
 a. Sang Nila Utama age (early settlements)
