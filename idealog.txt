@@ -1,0 +1,26 @@
+1. Title Screen
+- ZamanPerang
+- transition into play button, help
+- difficulty selection
+
+2. main scene (gameplay)
+- ui to a. deploy units
+	b. maximum 5 units in queue
+	c. turret maker
+	d. add turret slot
+	e. sell turret
+	f. prestige to next age
+	g. must be able to view "historical information"
+	   and have option to pause the game to read it
+
+3. Age generations:
+a. Sang Nila Utama age (early settlements)
+- lion
+-fisherman
+- sang nila utama
+b. British colonial rule
+- stamford raffles
+c. World war II
+d. Independence
+e. Current/ optional Futuristic age
+
