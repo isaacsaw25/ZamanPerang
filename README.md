@@ -2,7 +2,7 @@
 
 ### Team Name: SawBros
 
-![Logo](Assets/Sprites/zamanPerangTransparent (2).png)
+![Assets/Sprites/zamanPerangTransparent (2).png](https://github.com/isaacsaw25/ZamanPerang/blob/64cfa434e65b9f8bb174beb436652a2d20598dcd/Assets/Sprites/zamanPerangTransparent%20(2).png)
 
 ---
 
