@@ -2,7 +2,7 @@
 
 ### Team Name: SawBros
 
-![Zaman Perang Logo](ZamanPerang/Assets/Sprites/zamanPerangTransparent (2).png) 
+![Zaman Perang Logo](Assets/Sprites/zamanPerangTransparent (2).png) 
 
 ---
 
