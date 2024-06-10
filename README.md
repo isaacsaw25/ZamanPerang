@@ -19,7 +19,6 @@
 10. [Work Log](#work-log)
 11. [Installation and Setup](#installation-and-setup)
 12. [Contributing](#contributing)
-13. [License](#license)
 
 ---
 
