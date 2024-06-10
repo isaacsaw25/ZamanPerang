@@ -2,7 +2,7 @@
 
 ### Team Name: SawBros
 
-![Zaman Perang Logo](path/to/your/logo.png) <!-- Replace with the actual path to your logo image -->
+![Zaman Perang Logo](ZamanPerang/Assets/Sprites/zamanPerangTransparent (2).png) 
 
 ---
 
@@ -140,7 +140,7 @@ Our plan to complete the game in the next two milestones:
 |        | Refinement | Testing and debugging | Isaac, Ivan | July 15 - July 21 |
 
 ### Class Diagram
-![Class Diagram](https://drive.google.com/file/d/12VHu5jSSSifixw2jFU5KBElOaFw5ixD6/view?usp=sharing) <!-- Replace with the actual path to your class diagram image -->
+[Class Diagram](https://drive.google.com/file/d/12VHu5jSSSifixw2jFU5KBElOaFw5ixD6/view?usp=sharing)
 
 We plan to restructure the system, consolidating friendly and enemy units into a single troop class and using a universal health tracker. Improvements will be made by Milestone 2.
 
@@ -156,3 +156,20 @@ To set up **Zaman Perang** on your local machine:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/zaman-perang.git
+2. Open the project in Unity.
+3. Make sure you have the necessary assets and dependencies installed.
+4. Play the game directly from the Unity editor or build it for your target platform.
+
+### Contributing
+We welcome contributions to Zaman Perang. To contribute:
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feature/your-feature
+3. Commit your changes:
+   ```bash
+   git commit -m "Add your feature"
+4. Push to your branch:
+   ```bash
+   git push origin feature/your-feature
+5. Open a pull request and describe your changes.
