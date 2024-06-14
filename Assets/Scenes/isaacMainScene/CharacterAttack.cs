@@ -7,6 +7,7 @@ public class CharacterAttack : MonoBehaviour
     public float atkRate = 1.0f;
     public float fireRate = 1.0f;
     public float meleeDamage = 10f;
+    public float rangedDamage = 8f;
     public GameObject projectilePrefab;
     public Transform firePoint;
     public bool isFriendly;
@@ -31,11 +32,15 @@ public class CharacterAttack : MonoBehaviour
 
     void Update()
     {
-        isMeleeing = false; // reset melee state every tick
-        if (!characterMovement.isMoving && Time.time > lastMeleeAttackTime) // Not moving and it is time to melee
+        Collider2D meleeTarget = characterDetection.DetectTarget(characterDetection.stoppingRange,
+                                                   LayerMask.GetMask(isFriendly ? "Enemy" : "Friendly"));
+        if (meleeTarget != null)
         {
-            PerformMeleeAttack();
             isMeleeing = true;
+            if (Time.time >= lastMeleeAttackTime + atkRate) { 
+                PerformMeleeAttack(meleeTarget);
+                lastMeleeAttackTime = Time.time;
+            }
         }
         if (isRanged && !isMeleeing && Time.time >= lastRangedAttackTime + fireRate)
         {
@@ -45,23 +50,13 @@ public class CharacterAttack : MonoBehaviour
         }
     }
 
-    public void PerformMeleeAttack()
+    public void PerformMeleeAttack(Collider2D target)
     {
-        if (Time.time >= lastMeleeAttackTime + atkRate)
+        CharacterHealth enemyHealth = target.GetComponent<CharacterHealth>();
+        if (enemyHealth != null)
         {
-            Collider2D target = characterDetection.DetectTarget(characterDetection.stoppingRange, 
-                                                   LayerMask.GetMask(isFriendly ? "Enemy" : "Friendly"));
-            if (target != null)
-            {
-                CharacterHealth enemyHealth = target.GetComponent<CharacterHealth>();
-                if (enemyHealth != null)
-                {
-                    enemyHealth.TakeDamage(meleeDamage);
-                    Debug.Log(gameObject.name + " melee attack dealt " + meleeDamage + " damage to " + target.name);
-                }
-            }
-
-            lastMeleeAttackTime = Time.time;
+            enemyHealth.TakeDamage(meleeDamage);
+            Debug.Log(gameObject.name + " melee attack dealt " + meleeDamage + " damage to " + target.name);
         }
     }
 
@@ -80,6 +75,7 @@ public class CharacterAttack : MonoBehaviour
                     Vector2 direction = (target.transform.position - firePoint.position).normalized;
                     projectileScript.SetDirection(direction);
                     projectileScript.SetOwnership(isFriendly);
+                    projectileScript.damage = rangedDamage;
 
                     Debug.Log(gameObject.name + " fired a " + (isFriendly ? "friendly" : "enemy") + " projectile towards " + direction);
                 }

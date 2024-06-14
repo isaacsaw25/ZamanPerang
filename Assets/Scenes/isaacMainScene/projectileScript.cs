@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed = 10f;                // Speed of the projectile
-    public float damage = 10f;               // Damage dealt by the projectile
+    public float damage;               // Damage dealt by the projectile
     public float timeToLive = 3.0f;          // Self-destruct timer 
     public Vector3 targetDirection;          // Direction to persist towards
     public bool isFriendlyProjectile;        // Indicates if the bullet is from a friendly unit
