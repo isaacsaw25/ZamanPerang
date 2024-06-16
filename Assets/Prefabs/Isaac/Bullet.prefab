@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 12770b109a129d940b12e33a0625c960, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,8 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  target: {fileID: 0}
   damage: 10
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
+  timeToLive: 3
+  targetDirection: {x: 0, y: 0, z: 0}
+  isFriendlyProjectile: 0

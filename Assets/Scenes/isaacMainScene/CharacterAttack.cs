@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterAttack : MonoBehaviour
 {
     public float atkRate = 1.0f;
-    public float fireRate = 1.0f;
+    public float fireRate = 1.0f; // (Time between attacks)
     public float meleeDamage = 10f;
     public float rangedDamage = 8f;
     public GameObject projectilePrefab;

@@ -13,13 +13,20 @@ public class CharacterHealth : MonoBehaviour
     private GameObject healthBarInstance;
     private Image healthFill;
 
+    private CharacterAttack CharacterAttack;
+    private GameObject mainGameLogic;
+    private MainGameLogic logicScript;
+
     void Start()
     {
         currentHealth = maxHealth;
+        CharacterAttack = GetComponent<CharacterAttack>();
+        mainGameLogic = GameObject.Find("MainGameLogic");
+        logicScript = mainGameLogic.GetComponent<MainGameLogic>();
 
         if (healthBarPrefab != null)
         {
-            healthBarInstance = Instantiate(healthBarPrefab, transform.position, Quaternion.identity, transform);
+            healthBarInstance = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
             healthFill = healthBarInstance.transform.Find("CurrentHealth").GetComponent<Image>();
             healthFill.fillAmount = currentHealth / maxHealth;
             healthBarInstance.SetActive(false);
@@ -62,7 +69,13 @@ public class CharacterHealth : MonoBehaviour
     void Die()
     {
         Debug.Log(gameObject.name + " died.");
+        Destroy(healthBarInstance);
         Destroy(gameObject);
+        if (!CharacterAttack.isFriendly && mainGameLogic != null) // Add currencies if character is enemy
+        {
+            logicScript.zpDollar += 25;
+            logicScript.experience += 300;
+        }
     }
 
     void OnMouseEnter()

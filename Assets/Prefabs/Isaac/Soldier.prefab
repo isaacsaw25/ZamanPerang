@@ -32,8 +32,8 @@ Transform:
   m_GameObject: {fileID: 4754725048910426373}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.94, y: -1.94, z: 0}
-  m_LocalScale: {x: 0.27816442, y: 0.34988797, z: 1}
+  m_LocalPosition: {x: -4.2176, y: -2.1972, z: 0}
+  m_LocalScale: {x: 0.6826585, y: 0.780072, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,8 +78,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0cc91d00c12ab124ba5576f9ad36cb52, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 21300000, guid: 8934a75301a6e14428226e897021aef7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,14 +126,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5, y: 5}
+    oldSize: {x: 1.75, y: 2.34}
     newSize: {x: 5, y: 5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.55, y: 5}
+  m_Size: {x: 1.83, y: 2.41}
   m_EdgeRadius: 0
 --- !u!50 &6565933024385157746
 Rigidbody2D:
@@ -177,6 +177,7 @@ MonoBehaviour:
   atkRate: 1
   fireRate: 1
   meleeDamage: 10
+  rangedDamage: 8
   projectilePrefab: {fileID: 8677127639226697911, guid: cb110b4ae08531444a75be842e4a45c6, type: 3}
   firePoint: {fileID: 0}
   isFriendly: 1
@@ -195,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 1
   isMoving: 0
+  freeze: 0
 --- !u!114 &3713200857285760096
 MonoBehaviour:
   m_ObjectHideFlags: 0
