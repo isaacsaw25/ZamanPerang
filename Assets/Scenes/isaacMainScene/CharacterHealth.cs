@@ -7,22 +7,30 @@ public class CharacterHealth : MonoBehaviour
 {
     public float maxHealth = 100;
     public float currentHealth;
-    
+
     public Vector3 healthBarOffset = new Vector3(0, 1.2f, 0); // Offset for the health bar 
     public GameObject healthBarPrefab;
     private GameObject healthBarInstance;
     private Image healthFill;
 
     private CharacterAttack CharacterAttack;
-    private GameObject mainGameLogic;
-    private MainGameLogic logicScript;
+    public float difficultyMultiplier;
+    private GameObject mainController;
+    private CurrencyScript currencyScript;
 
     void Start()
     {
-        currentHealth = maxHealth;
+        difficultyMultiplier = PlayerPrefs.GetFloat("DifficultyMultiplier", 1.0f);
+
         CharacterAttack = GetComponent<CharacterAttack>();
-        mainGameLogic = GameObject.Find("MainGameLogic");
-        logicScript = mainGameLogic.GetComponent<MainGameLogic>();
+        if (!CharacterAttack.isFriendly) // inject the difficulty level into enemy health
+        {
+            maxHealth *= difficultyMultiplier;
+        }
+
+        currentHealth = maxHealth;
+        mainController = GameObject.Find("MainController");
+        currencyScript = mainController.GetComponent<CurrencyScript>();
 
         if (healthBarPrefab != null)
         {
@@ -71,10 +79,11 @@ public class CharacterHealth : MonoBehaviour
         Debug.Log(gameObject.name + " died.");
         Destroy(healthBarInstance);
         Destroy(gameObject);
-        if (!CharacterAttack.isFriendly && mainGameLogic != null) // Add currencies if character is enemy
+        if (!CharacterAttack.isFriendly && mainController != null) // Add currencies if character is enemy
         {
-            logicScript.zpDollar += 25;
-            logicScript.experience += 300;
+            currencyScript.zpDollar += 25;
+            currencyScript.experience += 300;
+            // Instantiate money pop up text
         }
     }
 

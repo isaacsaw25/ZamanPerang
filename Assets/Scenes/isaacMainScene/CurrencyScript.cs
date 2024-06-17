@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainGameLogic : MonoBehaviour
+public class CurrencyScript : MonoBehaviour
 {
     public float zpDollar = 175;
     public float experience = 0;

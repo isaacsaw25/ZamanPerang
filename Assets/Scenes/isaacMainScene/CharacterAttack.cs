@@ -12,6 +12,7 @@ public class CharacterAttack : MonoBehaviour
     public Transform firePoint;
     public bool isFriendly;
     public bool isRanged;
+    public float difficultyMultiplier;
 
     private float lastMeleeAttackTime = 0;
     private float lastRangedAttackTime = 0;
@@ -28,6 +29,13 @@ public class CharacterAttack : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer(isFriendly ? "Friendly" : "Enemy"); // Send enemy units to enemy layer
         characterDetection = GetComponent<CharacterDetection>();
         characterMovement = GetComponent<CharacterMovement>();
+        difficultyMultiplier = PlayerPrefs.GetFloat("DifficultyMultiplier", 1.0f);
+
+        if (!isFriendly) // inject the difficulty multiplier into the enemy units
+        {
+            meleeDamage *= difficultyMultiplier;
+            rangedDamage *= difficultyMultiplier;
+        }
     }
 
     void Update()

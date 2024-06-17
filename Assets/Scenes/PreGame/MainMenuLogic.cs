@@ -5,9 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void PlayGame(float difficulty)
     {
-        SceneManager.LoadScene("isaacMain");
+        // Save the difficulty multiplier to PlayerPrefs
+        PlayerPrefs.SetFloat("DifficultyMultiplier", difficulty);
+
+        // Ensure the data is saved to disk
+        PlayerPrefs.Save();
+
+        // Load the main game scene
+        SceneManager.LoadScene("mainGameScene");
+
     }
 
     public void GoToSettingsMenu()

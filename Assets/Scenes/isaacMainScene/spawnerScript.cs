@@ -16,7 +16,7 @@ public class UnitSpawner : MonoBehaviour
             // Add a listener to the button to spawn a unit when clicked
             spawnButton.onClick.AddListener(() => SpawnUnit(isFriendly));
         }
-        gameObject.transform.position = new Vector3(isFriendly ? -6 : 6, -2, 0); // Set the spawner's position 
+        gameObject.transform.position = new Vector3(isFriendly ? -6 : 6, -3, 0); // Flip the enemy spawner's position 
     }
 
     // Method to spawn a unit and configure its properties
