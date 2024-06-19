@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae40d26f113dad4f98bff317f866b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 257840918}
+  clinkSound: {fileID: 257840918}
   soundDelay: 0.8
   textDelay: 1.5
   textKillDelay: 2.5
@@ -288,7 +288,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1062472592
 MonoBehaviour:
   m_ObjectHideFlags: 0
