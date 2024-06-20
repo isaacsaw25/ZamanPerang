@@ -14,10 +14,9 @@ public class VolumeControlScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AdjustMusicVolume(1.0f); // Enable full music by default
-        AdjustSoundVolume(1.0f);
-
         music = OST.GetComponent<AudioSource>();
+        music.volume = PlayerPrefs.GetFloat("MusicLevel");
+        slider.value = music.volume;
     }
 
     // Update is called once per frame

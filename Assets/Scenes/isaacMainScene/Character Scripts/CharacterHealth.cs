@@ -29,7 +29,7 @@ public class CharacterHealth : MonoBehaviour
         }
 
         currentHealth = maxHealth;
-        mainController = GameObject.Find("MainController");
+        mainController = GameObject.Find("MainLogicController");
         currencyScript = mainController.GetComponent<CurrencyScript>();
 
         if (healthBarPrefab != null)

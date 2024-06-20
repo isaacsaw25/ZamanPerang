@@ -13,6 +13,7 @@ public class PauseMenuHandler : MonoBehaviour
     public GameObject optionMenu;
     public GameObject mainPauseMenu;
     public GameObject historyMenu;
+    public GameObject confirmationScreen;
 
     private void Start()
     {
@@ -59,6 +60,7 @@ public class PauseMenuHandler : MonoBehaviour
         PauseMenuCanvas.SetActive(true); // turn on the pause menu
         mainPauseMenu.SetActive(true);
         optionMenu.SetActive(false);
+        confirmationScreen.SetActive(false);
         
         // Keep track of the pause
         isGamePaused = true;
@@ -66,8 +68,9 @@ public class PauseMenuHandler : MonoBehaviour
         music.Pause();
     }
 
-    public void QuitGame()
+    public void ToMainMenu()
     {
-        Application.Quit();
+        Time.timeScale = 1f; // Set time back to normal
+        SceneManager.LoadScene("MainMenu");
     }
 }
