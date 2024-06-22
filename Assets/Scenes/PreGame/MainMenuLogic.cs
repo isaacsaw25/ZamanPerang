@@ -18,23 +18,24 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        AdjustMusicVolume(1.0f); // Enable full music by default
-        AdjustSoundVolume(1.0f);
-
         mainMenu.SetActive(true);
         optionsMenu.SetActive(false);
         difficultyMenu.SetActive(false);
         historyMenu.SetActive(false);
 
         seaWaves = menuSound.GetComponent<AudioSource>();
+
+        if (!PlayerPrefs.HasKey("MusicLevel")) {
+            PlayerPrefs.SetFloat("MusicLevel", 1);
+            PlayerPrefs.Save();
+        }
     }
 
     private void Update()
     {
         // Adjust the music and sound volume based on slider input
-        PlayerPrefs.SetFloat("MusicLevel", slider.value);
-        PlayerPrefs.Save();
-        seaWaves.volume = PlayerPrefs.GetFloat("MusicLevel");
+        slider.value = PlayerPrefs.GetFloat("MusicLevel");
+        seaWaves.volume = slider.value;
     }
 
     public void PlayGame(float difficulty)
