@@ -215,8 +215,11 @@ MonoBehaviour:
   currentHealth: 0
   isFriendly: 1
   isBase: 0
+  moneyDropped: 35
+  expDropped: 250
   healthBarOffset: {x: 0, y: 1.2, z: 0}
   healthBarPrefab: {fileID: 7138164844654028079, guid: 529b7cbd86d024942850c1b6a5ee3730, type: 3}
+  popUpTextPrefab: {fileID: 6712670967160523263, guid: 66d56d74a44bad34aa7f6319a7d8647d, type: 3}
   difficultyMultiplier: 1
 --- !u!114 &6838433442881119158
 MonoBehaviour:
