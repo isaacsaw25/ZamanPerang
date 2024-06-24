@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 45.4427, y: -9.016, z: 0}
-  m_LocalScale: {x: 0.40352124, y: 0.37057376, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,10 +83,10 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 6.25, y: 6.54}
+  m_DrawMode: 2
+  m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
+  m_SpriteTileMode: 1
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
@@ -127,13 +127,13 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 2.42, y: 5.28}
-    newSize: {x: 6.25, y: 6.54}
+    newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
+    drawMode: 2
+    adaptiveTiling: 1
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.54, y: 5.45}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!50 &5817388834175439581
 Rigidbody2D:
@@ -214,8 +214,11 @@ MonoBehaviour:
   currentHealth: 0
   isFriendly: 1
   isBase: 0
+  moneyDropped: 25
+  expDropped: 200
   healthBarOffset: {x: 0, y: 1.2, z: 0}
   healthBarPrefab: {fileID: 7138164844654028079, guid: 529b7cbd86d024942850c1b6a5ee3730, type: 3}
+  popUpTextPrefab: {fileID: 6712670967160523263, guid: 66d56d74a44bad34aa7f6319a7d8647d, type: 3}
   difficultyMultiplier: 1
 --- !u!114 &8238733359823321995
 MonoBehaviour:

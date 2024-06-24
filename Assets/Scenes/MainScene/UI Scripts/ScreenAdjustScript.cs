@@ -19,18 +19,18 @@ public class ScreenAdjustScript : MonoBehaviour
         if (side == "left")
         {
             panningHandler.SetScrollDirection(-scrollSpeed);
-            Debug.Log("Trying to scroll left");
+            // Debug.Log("Trying to scroll left");
         }
         else if (side == "right")
         {
             panningHandler.SetScrollDirection(scrollSpeed);
-            Debug.Log("Trying to scroll right");
+            // Debug.Log("Trying to scroll right");
         }
     }
 
     void OnMouseExit()
     {
         panningHandler.SetScrollDirection(0);
-        Debug.Log("Screen should stop moving");
+        // Debug.Log("Screen should stop moving");
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,12 @@ public class CharacterHealth : MonoBehaviour
     public float currentHealth;
     public bool isFriendly;
     public bool isBase = false;
+    public float moneyDropped = 25; // ZP$ gained when defeating enemy troop
+    public float expDropped = 200; // EXP gained when defeating enemy troop
 
     public Vector3 healthBarOffset = new Vector3(0, 1.2f, 0); // Offset for the health bar 
     public GameObject healthBarPrefab;
+    public GameObject popUpTextPrefab;
     private GameObject healthBarInstance;
     private Image healthFill;
 
@@ -86,14 +90,25 @@ public class CharacterHealth : MonoBehaviour
         if (!isBase)
         {
             Debug.Log(gameObject.name + " died.");
-            Destroy(healthBarInstance);
-            Destroy(gameObject);
             if (!isFriendly && mainController != null) // Add currencies if character is enemy
             {
-                currencyScript.zpDollar += 25;
-                currencyScript.experience += 300;
-                // Instantiate money pop up text
+                currencyScript.zpDollar += moneyDropped;
+                currencyScript.experience += expDropped;
+                // Instantiate money pop up based on value
+                GameObject popup = Instantiate(popUpTextPrefab, gameObject.transform.position + healthBarOffset, Quaternion.identity);
+                Destroy(popup, 1.5f); // Destory the popup after delay
+                PopUpTextController popupController = popup.GetComponentInChildren<PopUpTextController>(); 
+                if (popupController != null)
+                {
+                    popupController.SetText("+$" + moneyDropped);
+                }
+                else
+                {
+                    Debug.LogWarning("MoneyPopupController component not found on the moneyPopupPrefab.");
+                }
             }
+            Destroy(healthBarInstance);
+            Destroy(gameObject);
         }
     }
 
