@@ -150,7 +150,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fe72a1349ae2c234dba7c2959be90e49, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a435f354c94476649bdf989996f0b38d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   seaWaves: {fileID: 305556086}
+  splashText: {fileID: 1642617334}
 --- !u!4 &306566474
 Transform:
   m_ObjectHideFlags: 0
