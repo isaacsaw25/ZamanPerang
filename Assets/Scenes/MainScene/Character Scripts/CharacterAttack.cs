@@ -40,6 +40,7 @@ public class CharacterAttack : MonoBehaviour
 
     void Update()
     {
+        // Look for melee target standing right in front
         Collider2D meleeTarget = characterDetection.DetectTarget(characterDetection.stoppingRange,
                                                    LayerMask.GetMask(isFriendly ? "Enemy" : "Friendly"));
         if (meleeTarget != null)
@@ -72,7 +73,8 @@ public class CharacterAttack : MonoBehaviour
     {
         if (projectilePrefab != null && firePoint != null)
         {
-            Collider2D target = characterDetection.DetectTarget(characterDetection.detectionRange, characterDetection.detectionLayer);
+            Collider2D target = characterDetection.DetectTarget(characterDetection.detectionRange, 
+                                                                LayerMask.GetMask(isFriendly ? "Enemy" : "Friendly"));
             if (target != null)
             {
                 GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
@@ -85,7 +87,8 @@ public class CharacterAttack : MonoBehaviour
                     projectileScript.SetOwnership(isFriendly);
                     projectileScript.damage = rangedDamage;
 
-                    Debug.Log(gameObject.name + " fired a " + (isFriendly ? "friendly" : "enemy") + " projectile towards " + direction);
+                    Debug.Log(gameObject.name + " fired a " + 
+                              (isFriendly ? "friendly" : "enemy") + " projectile towards " + direction);
                 }
 
                 lastRangedAttackTime = Time.time;

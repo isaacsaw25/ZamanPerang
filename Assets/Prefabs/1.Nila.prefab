@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a69f8ab8d0110446ac28da999be1ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stoppingRange: 0.7
+  stoppingRange: 0
   detectionRange: 5
   detectionLayer:
     serializedVersion: 2

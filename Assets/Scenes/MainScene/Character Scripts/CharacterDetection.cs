@@ -51,6 +51,6 @@ public class CharacterDetection : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + (isFriendly ? Vector3.right : Vector3.left) * detectionRange);
+        Gizmos.DrawLine(transform.position, transform.position + (isFriendly ? Vector3.right : Vector3.left) * stoppingRange);
     }
 }

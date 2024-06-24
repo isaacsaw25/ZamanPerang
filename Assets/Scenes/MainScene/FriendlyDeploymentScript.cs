@@ -22,12 +22,6 @@ public class FriendlyDeploymentScript : MonoBehaviour
         ages[currentAge].SetActive(true); // Set first age to true
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Prestige()
     {
         if (currentAge < 4)

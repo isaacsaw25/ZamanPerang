@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainGameLogic : MonoBehaviour
+public class DifficultyAdjuster : MonoBehaviour
 {
     public float difficultyMultiplier;   // This multiplier directly affects enemy units
 
@@ -14,22 +14,5 @@ public class MainGameLogic : MonoBehaviour
 
         // Use the difficulty multiplier in your game logic
         Debug.Log("Difficulty Multiplier: " + difficultyMultiplier);
-
-        // Retrieve the sound settings from PlayerPrefs
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void WinGame() { 
-
-    }
-
-    public void LoseGame()
-    {
-
     }
 }
