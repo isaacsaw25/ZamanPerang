@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
     private AudioSource seaWaves;
     public TextMeshProUGUI soundOnText;
     public Slider slider;
+    private bool isMuted;
 
     private void Start()
     {
@@ -25,17 +26,25 @@ public class MainMenu : MonoBehaviour
 
         seaWaves = menuSound.GetComponent<AudioSource>();
 
-        if (!PlayerPrefs.HasKey("MusicLevel")) {
+        if (!PlayerPrefs.HasKey("MusicLevel")) 
+        {
             PlayerPrefs.SetFloat("MusicLevel", 1);
             PlayerPrefs.Save();
         }
+
+        slider.value = PlayerPrefs.GetFloat("MusicLevel");
     }
 
     private void Update()
     {
         // Adjust the music and sound volume based on slider input
-        slider.value = PlayerPrefs.GetFloat("MusicLevel");
-        seaWaves.volume = slider.value;
+        if (!isMuted)
+        {
+            // Adjust the music and sound volume based on slider input
+            PlayerPrefs.SetFloat("MusicLevel", slider.value);
+            PlayerPrefs.Save();
+            seaWaves.volume = PlayerPrefs.GetFloat("MusicLevel");
+        }
     }
 
     public void PlayGame(float difficulty)
@@ -51,31 +60,41 @@ public class MainMenu : MonoBehaviour
 
     }
 
-    public void AdjustMusicVolume(float level)
+    public void AdjustMusicVolume()
     {
-        slider.value = level;
-        PlayerPrefs.SetFloat("MusicLevel", level);
+        PlayerPrefs.SetFloat("MusicLevel", slider.value);
         PlayerPrefs.Save();
     }
 
     public void AdjustSoundVolume(float level)
     {
-        slider.value = level;
-        PlayerPrefs.SetFloat("MusicLevel", level);
+        PlayerPrefs.SetFloat("MusicLevel", slider.value);
         PlayerPrefs.Save();
     }
 
     public void VolumeToggle()
     {
         {
-            if (PlayerPrefs.GetFloat("MusicLevel") > 0)
+            if (!isMuted)
             {
-                AdjustMusicVolume(0);
+                seaWaves.volume = 0;
+                slider.value = 0;
+                isMuted = true;
                 soundOnText.text = "SOUND : OFF";
-            } 
+            }
             else
             {
-                AdjustMusicVolume(1);
+                isMuted = false;
+                if (slider.value > 0)
+                {
+                    PlayerPrefs.SetFloat("MusicLevel", slider.value);
+                    PlayerPrefs.Save();
+                }
+                else
+                {
+                    slider.value = PlayerPrefs.GetFloat("MusicLevel");
+                }
+                seaWaves.volume = slider.value;
                 soundOnText.text = "SOUND : ON";
             }
         }

@@ -11,6 +11,8 @@ public class VolumeControlScript : MonoBehaviour
     public TextMeshProUGUI soundOnText;
     public Slider slider;
 
+    private bool isMuted;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,36 +24,50 @@ public class VolumeControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Adjust the music and sound volume based on slider input
-        PlayerPrefs.SetFloat("MusicLevel", slider.value);
-        PlayerPrefs.Save();
-        music.volume = PlayerPrefs.GetFloat("MusicLevel");
+        if (!isMuted)
+        {
+            // Adjust the music and sound volume based on slider input
+            PlayerPrefs.SetFloat("MusicLevel", slider.value);
+            PlayerPrefs.Save();
+            music.volume = PlayerPrefs.GetFloat("MusicLevel");
+        }
     }
-    public void AdjustMusicVolume(float level)
+
+    public void AdjustMusicVolume()
     {
-        slider.value = level;
-        PlayerPrefs.SetFloat("MusicLevel", level);
+        PlayerPrefs.SetFloat("MusicLevel", slider.value);
         PlayerPrefs.Save();
     }
 
     public void AdjustSoundVolume(float level)
     {
-        slider.value = level;
-        PlayerPrefs.SetFloat("MusicLevel", level);
+        PlayerPrefs.SetFloat("MusicLevel", slider.value);
         PlayerPrefs.Save();
     }
 
     public void VolumeToggle()
     {
         {
-            if (PlayerPrefs.GetFloat("MusicLevel") > 0)
+            if (!isMuted)
             {
-                AdjustMusicVolume(0);
+                music.volume = 0;
+                slider.value = 0;
+                isMuted = true;
                 soundOnText.text = "SOUND : OFF";
             }
             else
             {
-                AdjustMusicVolume(1);
+                isMuted = false;
+                if (slider.value > 0)
+                {
+                    PlayerPrefs.SetFloat("MusicLevel", slider.value);
+                    PlayerPrefs.Save();
+                }
+                else
+                {
+                    slider.value = PlayerPrefs.GetFloat("MusicLevel");
+                }
+                music.volume = slider.value;
                 soundOnText.text = "SOUND : ON";
             }
         }

@@ -6,36 +6,61 @@ using UnityEngine.UI;
 public class UnitSpawner : MonoBehaviour
 {
     public bool isFriendly;
-    public GameObject unitPrefab;    // The unit prefab to be spawned
-    public Button spawnButton;       // Button to trigger spawning (optional)
+    public GameObject[] unitPrefabs; // Array to hold unit prefabs
+    public Button[] spawnButtons;    // Array to hold spawn buttons
+    public Transform spawnPoint;     // Spawn point for the units
 
     void Start()
     {
-        if (spawnButton != null)
+        // Check if the arrays are set up correctly
+        if (unitPrefabs.Length != spawnButtons.Length)
         {
-            // Add a listener to the button to spawn a unit when clicked
-            spawnButton.onClick.AddListener(() => SpawnUnit(isFriendly));
+            Debug.LogError("The number of unit prefabs does not match the number of spawn buttons.");
+            return;
         }
+
+        // Assign listeners to each button
+        for (int i = 0; i < spawnButtons.Length; i++)
+        {
+            int index = i; // Local copy of the loop variable for the closure
+            if (spawnButtons[i] != null)
+            {
+                spawnButtons[i].onClick.AddListener(() => SpawnUnit(index));
+            }
+            else
+            {
+                Debug.LogWarning("Spawn button at index " + i + " is not assigned.");
+            }
+        }
+
+        // Set spawn point to transform of spawner
+        spawnPoint = gameObject.transform;
     }
 
-    // Method to spawn a unit and configure its properties
-    public void SpawnUnit(bool friendlyStatus)
+    // Method to spawn a unit based on the index
+    public void SpawnUnit(int unitIndex)
     {
-        if (unitPrefab == null)
+        if (unitIndex < 0 || unitIndex >= unitPrefabs.Length)
         {
-            Debug.LogError("Unit prefab is not assigned.");
+            Debug.LogError("Invalid unit index: " + unitIndex);
+            return;
+        }
+
+        if (unitPrefabs[unitIndex] == null)
+        {
+            Debug.LogError("Unit prefab at index " + unitIndex + " is not assigned.");
             return;
         }
 
         // Instantiate the unit at the spawn point's position with no rotation
-        GameObject unitInstance = Instantiate(unitPrefab, gameObject.transform.position, Quaternion.identity);
+        GameObject unitInstance = Instantiate(unitPrefabs[unitIndex], spawnPoint.position, Quaternion.identity);
 
         // Access the CharacterAttack component on the spawned unit
         CharacterAttack characterAttack = unitInstance.GetComponent<CharacterAttack>();
         if (characterAttack != null)
         {
-            // Set the isFriendly property based on the passed friendlyStatus parameter
-            characterAttack.isFriendly = friendlyStatus;
+            // Set the isFriendly property based on the isFriendly status of the spawner
+            characterAttack.isFriendly = isFriendly;
             Debug.Log("Spawned unit " + unitInstance.name + " isFriendly: " + characterAttack.isFriendly);
         }
         else
@@ -44,4 +69,3 @@ public class UnitSpawner : MonoBehaviour
         }
     }
 }
-

@@ -32,6 +32,8 @@ public class BaseScript : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            PlayerPrefs.SetInt("winState", isFriendly ? 0 : 1);
+            PlayerPrefs.Save();
             SceneManager.LoadScene("GameEndScene");
         }
     }
