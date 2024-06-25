@@ -10,8 +10,6 @@ public class CharacterHealth : MonoBehaviour
     public float currentHealth;
     public bool isFriendly;
     public bool isBase = false;
-    public float moneyDropped = 25; // ZP$ gained when defeating enemy troop
-    public float expDropped = 200; // EXP gained when defeating enemy troop
 
     public Vector3 healthBarOffset = new Vector3(0, 1.2f, 0); // Offset for the health bar 
     public GameObject healthBarPrefab;
@@ -20,6 +18,7 @@ public class CharacterHealth : MonoBehaviour
     private Image healthFill;
 
     private CharacterAttack CharacterAttack;
+    private CharacterCurrency CharacterCurrency;
     public float difficultyMultiplier;
     private GameObject mainController;
     private CurrencyScript currencyScript;
@@ -28,6 +27,7 @@ public class CharacterHealth : MonoBehaviour
     {
         difficultyMultiplier = PlayerPrefs.GetFloat("DifficultyMultiplier", 1.0f);
 
+        CharacterCurrency = GetComponent<CharacterCurrency>();
         CharacterAttack = GetComponent<CharacterAttack>();
         if (CharacterAttack != null )
         {
@@ -92,15 +92,15 @@ public class CharacterHealth : MonoBehaviour
             Debug.Log(gameObject.name + " died.");
             if (!isFriendly && mainController != null) // Add currencies if character is enemy
             {
-                currencyScript.zpDollar += moneyDropped;
-                currencyScript.experience += expDropped;
+                currencyScript.zpDollar += CharacterCurrency.moneyDropped;
+                currencyScript.experience += CharacterCurrency.expDropped;
                 // Instantiate money pop up based on value
                 GameObject popup = Instantiate(popUpTextPrefab, gameObject.transform.position + healthBarOffset, Quaternion.identity);
                 Destroy(popup, 1.5f); // Destory the popup after delay
                 PopUpTextController popupController = popup.GetComponentInChildren<PopUpTextController>(); 
                 if (popupController != null)
                 {
-                    popupController.SetText("+$" + moneyDropped);
+                    popupController.SetText("+$" + CharacterCurrency.moneyDropped);
                 }
                 else
                 {

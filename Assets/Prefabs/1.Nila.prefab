@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 3933011577992016741}
   - component: {fileID: 6838433442881119158}
   - component: {fileID: 8973402519394111674}
+  - component: {fileID: -3993041623524761377}
   m_Layer: 7
   m_Name: 1.Nila
   m_TagString: Untagged
@@ -215,8 +216,6 @@ MonoBehaviour:
   currentHealth: 0
   isFriendly: 1
   isBase: 0
-  moneyDropped: 35
-  expDropped: 250
   healthBarOffset: {x: 0, y: 1.2, z: 0}
   healthBarPrefab: {fileID: 7138164844654028079, guid: 529b7cbd86d024942850c1b6a5ee3730, type: 3}
   popUpTextPrefab: {fileID: 6712670967160523263, guid: 66d56d74a44bad34aa7f6319a7d8647d, type: 3}
@@ -259,3 +258,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3993041623524761377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4967189520231618048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982b0ada77b809f449ef57eefed95be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deployCost: 35
+  moneyDropped: 33
+  expDropped: 300

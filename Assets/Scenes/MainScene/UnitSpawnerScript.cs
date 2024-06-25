@@ -9,6 +9,8 @@ public class UnitSpawner : MonoBehaviour
     public GameObject[] unitPrefabs; // Array to hold unit prefabs
     public Button[] spawnButtons;    // Array to hold spawn buttons
     public Transform spawnPoint;     // Spawn point for the units
+    public GameObject MainController;
+    private CurrencyScript currencyScript;
 
     void Start()
     {
@@ -35,6 +37,9 @@ public class UnitSpawner : MonoBehaviour
 
         // Set spawn point to transform of spawner
         spawnPoint = gameObject.transform;
+
+        // Get reference to money values
+        currencyScript = MainController.GetComponent<CurrencyScript>();
     }
 
     // Method to spawn a unit based on the index
@@ -52,20 +57,32 @@ public class UnitSpawner : MonoBehaviour
             return;
         }
 
-        // Instantiate the unit at the spawn point's position with no rotation
-        GameObject unitInstance = Instantiate(unitPrefabs[unitIndex], spawnPoint.position, Quaternion.identity);
-
-        // Access the CharacterAttack component on the spawned unit
-        CharacterAttack characterAttack = unitInstance.GetComponent<CharacterAttack>();
-        if (characterAttack != null)
+        // Check if cost of the unit is met
+        CharacterCurrency CharacterCurrency = unitPrefabs[unitIndex].GetComponent<CharacterCurrency>();
+        float cost = CharacterCurrency.moneyDropped;
+        if (currencyScript.zpDollar >= cost)
         {
-            // Set the isFriendly property based on the isFriendly status of the spawner
-            characterAttack.isFriendly = isFriendly;
-            Debug.Log("Spawned unit " + unitInstance.name + " isFriendly: " + characterAttack.isFriendly);
+            // Instantiate the unit at the spawn point's position with no rotation
+            GameObject unitInstance = Instantiate(unitPrefabs[unitIndex], spawnPoint.position, Quaternion.identity);
+            // Remove deploy cost from the player
+            currencyScript.zpDollar -= cost;
+
+            // Access the CharacterAttack component on the spawned unit
+            CharacterAttack characterAttack = unitInstance.GetComponent<CharacterAttack>();
+            if (characterAttack != null)
+            {
+                // Set the isFriendly property based on the isFriendly status of the spawner
+                characterAttack.isFriendly = isFriendly;
+                Debug.Log("Spawned unit " + unitInstance.name + " isFriendly: " + characterAttack.isFriendly);
+            }
+            else
+            {
+                Debug.LogWarning("CharacterAttack component not found on the spawned unit.");
+            }
         }
         else
         {
-            Debug.LogWarning("CharacterAttack component not found on the spawned unit.");
+            Debug.Log("Not enough ZP$ to deploy " + unitPrefabs[unitIndex].name);
         }
     }
 }
