@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class CurrencyScript : MonoBehaviour
 {
-    public float zpDollar = 175;
-    public float experience = 0;
+    public static float zpDollar = 175;
+    public static float experience = 0;
 
     public bool addMoney;
     public bool addEXP;

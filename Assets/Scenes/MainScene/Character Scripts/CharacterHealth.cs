@@ -92,8 +92,8 @@ public class CharacterHealth : MonoBehaviour
             Debug.Log(gameObject.name + " died.");
             if (!isFriendly && mainController != null) // Add currencies if character is enemy
             {
-                currencyScript.zpDollar += CharacterCurrency.moneyDropped;
-                currencyScript.experience += CharacterCurrency.expDropped;
+                CurrencyScript.zpDollar += CharacterCurrency.moneyDropped;
+                CurrencyScript.experience += CharacterCurrency.expDropped;
                 // Instantiate money pop up based on value
                 GameObject popup = Instantiate(popUpTextPrefab, gameObject.transform.position + healthBarOffset, Quaternion.identity);
                 Destroy(popup, 1.5f); // Destory the popup after delay

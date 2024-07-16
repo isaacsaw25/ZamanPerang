@@ -10,6 +10,6 @@ public class Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = Vector2.left * speed;
+        rb.velocity = Vector2.right * speed;
     }
 }
