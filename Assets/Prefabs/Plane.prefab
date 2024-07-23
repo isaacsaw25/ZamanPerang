@@ -98,6 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bombPrefab: {fileID: 6514099935980111315, guid: 00e84ac27a3069940b10085b2e8274d4, type: 3}
-  bombDropInterval: 5
+  bombDropInterval: 2
   speed: 1
   endPoint: {x: 11, y: 0, z: 0}

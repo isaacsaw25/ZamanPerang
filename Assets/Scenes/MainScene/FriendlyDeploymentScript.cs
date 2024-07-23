@@ -7,10 +7,11 @@ public class FriendlyDeploymentScript : MonoBehaviour
     public GameObject homeMenu;
     public GameObject deployMenu;
     public GameObject[] ages;
-    public float[] experience; // experience levels to upgrade age
     public Rigidbody2D[] bases;
     public GameObject[] texts;
     private int currentAge = 0;
+    public GameObject MainController;
+    public ExperienceScript experienceScript;
 
 
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class FriendlyDeploymentScript : MonoBehaviour
     {
         homeMenu.SetActive(true);
         deployMenu.SetActive(false);
+        experienceScript = MainController.GetComponent<ExperienceScript>();
 
         activateAge();
         activateBase();
@@ -26,28 +28,54 @@ public class FriendlyDeploymentScript : MonoBehaviour
 
     public void Prestige()
     {
-        if (currentAge < 4 && CurrencyScript.experience >= experience[currentAge])
+        if (currentAge < 4 && CurrencyScript.experience >= experienceScript.experience[currentAge])
         {
+            // Upgrade to the next age
             currentAge++;
+
+            // Activate the new age settings
+            activateAge();
+            activateBase();
+            activateHistory();
+
+            // Get previous base's health component
+            CharacterHealth previousHealthComponent = bases[currentAge - 1].GetComponent<CharacterHealth>();
+            if (previousHealthComponent == null)
+            {
+                Debug.LogError($"Previous health component is null for age {currentAge - 1}");
+                return;
+            }
+
+            // Get the current base's health component for the new age
+            CharacterHealth newHealthComponent = bases[currentAge].GetComponent<CharacterHealth>();
+            if (newHealthComponent == null)
+            {
+                Debug.LogError($"New health component is null for age {currentAge}");
+                return;
+            }
+
+            // Debugging: Print previous health values
+            Debug.Log($"Previous Current Health: {previousHealthComponent.currentHealth}");
+            Debug.Log($"Previous Max Health: {previousHealthComponent.maxHealth}");
+
+            // Debugging: Print new max health value
+            Debug.Log($"New Max Health: {newHealthComponent.maxHealth}");
+
+            // Calculate the new current health based on the percentage of previous current health to max health
+            float previousCurrentHealth = previousHealthComponent.currentHealth;
+            float previousMaxHealth = previousHealthComponent.maxHealth;
+            float newMaxHealth = newHealthComponent.maxHealth;
+
+            // Preserve the health percentage when upgrading to the new age
+            newHealthComponent.currentHealth = previousCurrentHealth / previousMaxHealth * newMaxHealth;
+
+            // Debugging: Print new current health value
+            Debug.Log($"New Current Health: {newHealthComponent.currentHealth}");
         }
-
-        activateAge();
-        activateBase();
-        activateHistory();
-
-        if (currentAge > 0)
+        else
         {
-            float previousCurrentHealth = bases[currentAge - 1].
-                    gameObject.GetComponent<CharacterHealth>().currentHealth;
-            float previousMaxHealth = bases[currentAge - 1].
-                    gameObject.GetComponent<CharacterHealth>().maxHealth;
-
-            float newMaxHealth = bases[currentAge].gameObject.GetComponent<CharacterHealth>().maxHealth;
-
-            bases[currentAge].gameObject.GetComponent<CharacterHealth>()
-                    .currentHealth = (int)(previousCurrentHealth / previousMaxHealth * newMaxHealth);
+            Debug.LogWarning($"Cannot prestige: Current age is {currentAge} or insufficient experience.");
         }
-
     }
 
     public void activateAge()

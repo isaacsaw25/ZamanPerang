@@ -8,17 +8,19 @@ public class turretDeployment : MonoBehaviour
     public GameObject[] turretTowers; // Array to store turret tower prefabs for each age
     public GameObject[] turrets; // Array to store turret prefabs for each age
     public GameObject[] turretDeploymentSpots; // Array to store deployment spots for turrets
+    public GameObject[] turretsSpots;
     public int numOfTurretSpots = 0;
     public int numOfTurrets = 0;
     public List<GameObject> turretStorage = new List<GameObject>(); // List to store deployed turrets
     public List<GameObject> turretsTowerStorage = new List<GameObject>(); // List to store deployed turret towers
     public GameObject MainController;
     public CurrencyScript currencyScript;
-    public float[] experience;
+    public ExperienceScript experienceScript;
 
     void Start()
     {
         currencyScript = MainController.GetComponent<CurrencyScript>();
+        experienceScript = MainController.GetComponent<ExperienceScript>();
         // Initialize the currencyScript reference
         if (currencyScript == null)
         {
@@ -28,29 +30,33 @@ public class turretDeployment : MonoBehaviour
 
     public void updateAge()
     {
-        if (currentAge < turretTowers.Length - 1 && CurrencyScript.experience >= experience[currentAge]) // need insert experience logic
+        if (currentAge < 4 && CurrencyScript.experience >= experienceScript.experience[currentAge]) // need insert experience logic
         {
             currentAge++;
+
+            foreach (GameObject tower in turretsTowerStorage)
+            {
+                Destroy(tower);
+            }
+
+            turretsTowerStorage.Clear();
+
+            // Rebuild new age towers
+            for (int i = 0; i < numOfTurretSpots; i++)
+            {
+                GameObject turretTowerInstance = Instantiate(turretTowers[currentAge], turretDeploymentSpots[i].transform.position,
+                            Quaternion.identity);
+
+                Vector3 newScale = new Vector3(0.5f, 0.5f, 0.5f);
+                turretTowerInstance.transform.localScale = newScale;
+
+                // Add piece of Tower into Storage array
+                turretsTowerStorage.Add(turretTowerInstance);
+            }
         }
         else
         {
             Debug.Log("Already at the maximum age.");
-        }
-
-        foreach (GameObject tower in turretsTowerStorage)
-        {
-            Destroy(tower);
-        }
-
-        turretsTowerStorage.Clear();
-
-        // Rebuild new age towers
-        for (int i = 0; i < numOfTurretSpots; i++)
-        {
-            GameObject turretTowerInstance = Instantiate(turretTowers[currentAge], turretDeploymentSpots[i].transform.position,
-                        Quaternion.identity);
-            // Add piece of Tower into Storage array
-            turretsTowerStorage.Add(turretTowerInstance);
         }
     }
 
@@ -67,6 +73,9 @@ public class turretDeployment : MonoBehaviour
                 // Instantiate the unit at the spawn point's position with no rotation
                 GameObject turretTowerInstance = Instantiate(turretTowers[currentAge], turretDeploymentSpots[numOfTurretSpots].transform.position,
                         Quaternion.identity);
+
+                Vector3 newScale = new Vector3(0.5f, 0.5f, 0.5f);
+                turretTowerInstance.transform.localScale = newScale;
 
                 // Add piece of Tower into Storage array
                 turretsTowerStorage.Add(turretTowerInstance);
@@ -99,8 +108,8 @@ public class turretDeployment : MonoBehaviour
             if (CurrencyScript.zpDollar >= cost)
             {
                 // Instantiate the unit at the spawn point's position with no rotation
-                GameObject turretInstance = Instantiate(turrets[currentAge], turretDeploymentSpots[numOfTurrets].transform.position,
-                        Quaternion.identity);
+                GameObject turretInstance = Instantiate(turrets[currentAge], turretsTowerStorage[numOfTurrets].transform.position,
+                        turretsTowerStorage[numOfTurrets].transform.rotation);
 
                 // Add turret into Storage array
                 turretStorage.Add(turretInstance);
