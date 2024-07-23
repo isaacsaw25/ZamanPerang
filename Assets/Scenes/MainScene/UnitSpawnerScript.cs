@@ -60,12 +60,12 @@ public class UnitSpawner : MonoBehaviour
         // Check if cost of the unit is met
         CharacterCurrency CharacterCurrency = unitPrefabs[unitIndex].GetComponent<CharacterCurrency>();
         float cost = CharacterCurrency.moneyDropped;
-        if (currencyScript.zpDollar >= cost)
+        if (CurrencyScript.zpDollar >= cost)
         {
             // Instantiate the unit at the spawn point's position with no rotation
             GameObject unitInstance = Instantiate(unitPrefabs[unitIndex], spawnPoint.position, Quaternion.identity);
             // Remove deploy cost from the player
-            currencyScript.zpDollar -= cost;
+            CurrencyScript.zpDollar -= cost;
 
             // Access the CharacterAttack component on the spawned unit
             CharacterAttack characterAttack = unitInstance.GetComponent<CharacterAttack>();
