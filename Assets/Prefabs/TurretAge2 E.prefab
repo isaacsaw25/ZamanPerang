@@ -98,10 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 982b0ada77b809f449ef57eefed95be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deployCost: 50
+  deployCost: 25000
   moneyDropped: 0
   expDropped: 0
-  sellCost: 100
+  sellCost: 10000
 --- !u!114 &7665919121991745519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,11 +114,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c68278f4552de54eb5c0a6c89a2c567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilePrefab: {fileID: 8677127639226697911, guid: 4021f057c48663845aa4acdd8452ec89, type: 3}
+  projectilePrefab: {fileID: 8677127639226697911, guid: a61f8d3a2e0a9914daa75bf98b12f24b, type: 3}
   firePoint: {fileID: 3928010402265810842}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  fireRate: 1
-  detectionRadius: 4
+  fireRate: 1.75
+  detectionRadius: 8
   isFriendly: 0

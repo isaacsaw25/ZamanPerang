@@ -239,6 +239,7 @@ GameObject:
   - component: {fileID: 27089030}
   - component: {fileID: 27089029}
   - component: {fileID: 27089032}
+  - component: {fileID: 27089033}
   m_Layer: 5
   m_Name: LtAdnanButton
   m_TagString: Untagged
@@ -360,7 +361,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Lieutenant Adnan - $x
+  hoverMessage: Lieutenant Adnan - $1000
+--- !u!114 &27089033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27089027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 27089029}
+  cooldownTime: 2.5
 --- !u!1 &44223354
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,11 +593,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 46341808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14ff8cf365699624ba3299e4653dce28, type: 3}
+  m_Script: {fileID: 11500000, guid: ed4bb1b4d1e61574a935b7ae83511532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Build Turret
+  MainController: {fileID: 769730763}
+  currentAge: 0
 --- !u!1 &89359162
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +901,7 @@ GameObject:
   - component: {fileID: 109404936}
   - component: {fileID: 109404935}
   - component: {fileID: 109404938}
+  - component: {fileID: 109404939}
   m_Layer: 5
   m_Name: celebratorButton
   m_TagString: Untagged
@@ -1006,7 +1023,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Celebrator - $x
+  hoverMessage: Celebrator - $1500
+--- !u!114 &109404939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109404933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 109404935}
+  cooldownTime: 1.75
 --- !u!1 &133301440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,7 +1816,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.2547016, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1796,7 +1827,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.619404, y: 5.24}
   m_EdgeRadius: 0
 --- !u!212 &180656310
 SpriteRenderer:
@@ -2395,6 +2426,7 @@ GameObject:
   - component: {fileID: 262346067}
   - component: {fileID: 262346066}
   - component: {fileID: 262346069}
+  - component: {fileID: 262346070}
   m_Layer: 5
   m_Name: RafflesButton
   m_TagString: Untagged
@@ -2516,7 +2548,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Sir Stamford Raffles - $x
+  hoverMessage: Sir Stamford Raffles - $500
+--- !u!114 &262346070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262346064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 262346066}
+  cooldownTime: 2
 --- !u!1 &284634180
 GameObject:
   m_ObjectHideFlags: 0
@@ -2945,7 +2991,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.23656273, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2956,7 +3002,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.583126, y: 5.24}
   m_EdgeRadius: 0
 --- !u!212 &361721793
 SpriteRenderer:
@@ -3038,7 +3084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f83c08fe85dcbf4dafebce4216b61f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50000
+  maxHealth: 900
   currentHealth: 0
   isFriendly: 0
   isBase: 1
@@ -4114,6 +4160,7 @@ GameObject:
   - component: {fileID: 476599699}
   - component: {fileID: 476599698}
   - component: {fileID: 476599701}
+  - component: {fileID: 476599702}
   m_Layer: 5
   m_Name: RobotButton
   m_TagString: Untagged
@@ -4235,7 +4282,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: AI Robot - $x
+  hoverMessage: AI Robot - $20000
+--- !u!114 &476599702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476599696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 476599698}
+  cooldownTime: 3
 --- !u!1 &491510997
 GameObject:
   m_ObjectHideFlags: 0
@@ -4285,6 +4346,7 @@ GameObject:
   - component: {fileID: 493975917}
   - component: {fileID: 493975916}
   - component: {fileID: 493975919}
+  - component: {fileID: 493975920}
   m_Layer: 5
   m_Name: PoliceOffrButton
   m_TagString: Untagged
@@ -4406,7 +4468,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Police Officer - $x
+  hoverMessage: Police Officer - $2000
+--- !u!114 &493975920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493975914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 493975916}
+  cooldownTime: 2
 --- !u!1 &506816123
 GameObject:
   m_ObjectHideFlags: 0
@@ -5165,6 +5241,7 @@ GameObject:
   - component: {fileID: 580110159}
   - component: {fileID: 580110158}
   - component: {fileID: 580110161}
+  - component: {fileID: 580110162}
   m_Layer: 5
   m_Name: JapSoldierButton
   m_TagString: Untagged
@@ -5286,7 +5363,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Japanese Soldier - $x
+  hoverMessage: Japanese Soldier - $400
+--- !u!114 &580110162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580110156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 580110158}
+  cooldownTime: 1.75
 --- !u!1 &585148831
 GameObject:
   m_ObjectHideFlags: 0
@@ -5300,6 +5391,7 @@ GameObject:
   - component: {fileID: 585148834}
   - component: {fileID: 585148833}
   - component: {fileID: 585148836}
+  - component: {fileID: 585148837}
   m_Layer: 5
   m_Name: SpecialMoveButton
   m_TagString: Untagged
@@ -5435,6 +5527,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
   hoverMessage: Initiate Special
+--- !u!114 &585148837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585148831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 585148833}
+  cooldownTime: 20
 --- !u!1 &592057554
 GameObject:
   m_ObjectHideFlags: 0
@@ -5668,7 +5774,7 @@ Transform:
   m_GameObject: {fileID: 609463999}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.85, y: 0, z: 0}
+  m_LocalPosition: {x: 18.94, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6257,6 +6363,7 @@ GameObject:
   - component: {fileID: 712288386}
   - component: {fileID: 712288385}
   - component: {fileID: 712288388}
+  - component: {fileID: 712288389}
   m_Layer: 5
   m_Name: BritSoldierButton
   m_TagString: Untagged
@@ -6378,7 +6485,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: British Soldier - $x
+  hoverMessage: British Soldier - $50
+--- !u!114 &712288389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712288383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 712288385}
+  cooldownTime: 1.25
 --- !u!1 &724280801
 GameObject:
   m_ObjectHideFlags: 0
@@ -6769,7 +6890,7 @@ PrefabInstance:
     - target: {fileID: 6730516940936457394, guid: 1e456f3793309274fb3fd351180251f8, type: 3}
       propertyPath: unitPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 6645336399591549337, guid: a887b92acda4e8a40a3144f9c02b9b28, type: 3}
+      objectReference: {fileID: 6645336399591549337, guid: a24c7d23d13c9ec4aaf254576a25d5db, type: 3}
     - target: {fileID: 6730516940936457394, guid: 1e456f3793309274fb3fd351180251f8, type: 3}
       propertyPath: unitPrefabs.Array.data[1]
       value: 
@@ -7202,6 +7323,10 @@ MonoBehaviour:
   MainController: {fileID: 769730763}
   currencyScript: {fileID: 769730765}
   experienceScript: {fileID: 769730775}
+  spotCost:
+  - 1000
+  - 3000
+  - 7500
 --- !u!114 &769730773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7291,13 +7416,13 @@ MonoBehaviour:
   MainController: {fileID: 769730763}
   experienceScript: {fileID: 769730775}
   ballSpawner:
-  - {fileID: 772705599}
-  - {fileID: 1202537269}
-  - {fileID: 2137075225}
-  - {fileID: 1246924694}
-  - {fileID: 627672163}
-  - {fileID: 222737990}
-  - {fileID: 506816123}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   cannonball: {fileID: 6780569663723076626, guid: 66b6842f70672f743a44bff459cd6e9f, type: 3}
   ionray: {fileID: 2057899212121074867, guid: a0f7e48c98ec7504d9155ff23f302d42, type: 3}
   boost: {fileID: 769730777}
@@ -7314,11 +7439,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   experience:
-  - 200
-  - 400
-  - 600
-  - 800
-  - 1000
+  - 12000
+  - 45000
+  - 150000
+  - 500000
+  - 1800000
   currentAge: 0
 --- !u!114 &769730776
 MonoBehaviour:
@@ -7355,8 +7480,7 @@ MonoBehaviour:
   friendlyLayer:
     serializedVersion: 2
     m_Bits: 128
-  healthBoost: 2
-  damageBoost: 2
+  boostRatio: 1.2
 --- !u!1 &772705599
 GameObject:
   m_ObjectHideFlags: 0
@@ -8305,6 +8429,7 @@ GameObject:
   - component: {fileID: 876565131}
   - component: {fileID: 876565130}
   - component: {fileID: 876565133}
+  - component: {fileID: 876565134}
   m_Layer: 5
   m_Name: BSLimButton
   m_TagString: Untagged
@@ -8426,7 +8551,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Lim Bo Seng - $x
+  hoverMessage: Lim Bo Seng - $200
+--- !u!114 &876565134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876565128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 876565130}
+  cooldownTime: 1.75
 --- !u!1 &878807160
 GameObject:
   m_ObjectHideFlags: 0
@@ -8985,11 +9124,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 947772313}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14ff8cf365699624ba3299e4653dce28, type: 3}
+  m_Script: {fileID: 11500000, guid: 9623cd754c444d9469a0e7c3bd6f2b25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Upgrade Age
+  MainController: {fileID: 769730763}
+  currentAge: 0
 --- !u!1 &999848671
 GameObject:
   m_ObjectHideFlags: 0
@@ -9718,11 +9858,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1036373686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14ff8cf365699624ba3299e4653dce28, type: 3}
+  m_Script: {fileID: 11500000, guid: 64053227078ee6e41a463447737d5098, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Add Turret Spot
+  MainController: {fileID: 769730763}
+  currentAge: 0
 --- !u!1 &1071753890
 GameObject:
   m_ObjectHideFlags: 0
@@ -9949,6 +10090,7 @@ GameObject:
   - component: {fileID: 1092018683}
   - component: {fileID: 1092018682}
   - component: {fileID: 1092018685}
+  - component: {fileID: 1092018686}
   m_Layer: 5
   m_Name: TankButton
   m_TagString: Untagged
@@ -10070,7 +10212,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Tank - $x
+  hoverMessage: Tank - $6000
+--- !u!114 &1092018686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092018680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 1092018682}
+  cooldownTime: 2.25
 --- !u!1 &1095502578
 GameObject:
   m_ObjectHideFlags: 0
@@ -10159,6 +10315,7 @@ GameObject:
   - component: {fileID: 1119397093}
   - component: {fileID: 1119397092}
   - component: {fileID: 1119397095}
+  - component: {fileID: 1119397096}
   m_Layer: 5
   m_Name: SuperSolButton
   m_TagString: Untagged
@@ -10280,7 +10437,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Super Soldier - $x
+  hoverMessage: Super Soldier - $150000
+--- !u!114 &1119397096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119397090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 1119397092}
+  cooldownTime: 4
 --- !u!1 &1123030392
 GameObject:
   m_ObjectHideFlags: 0
@@ -10369,6 +10540,7 @@ GameObject:
   - component: {fileID: 1128333287}
   - component: {fileID: 1128333286}
   - component: {fileID: 1128333289}
+  - component: {fileID: 1128333290}
   m_Layer: 5
   m_Name: NilaButton
   m_TagString: Untagged
@@ -10490,7 +10662,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Nila - $x
+  hoverMessage: Nila - $25
+--- !u!114 &1128333290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128333284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 1128333286}
+  cooldownTime: 1
 --- !u!1 &1143914794
 GameObject:
   m_ObjectHideFlags: 0
@@ -10660,7 +10846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f83c08fe85dcbf4dafebce4216b61f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2000
+  maxHealth: 2800
   currentHealth: 0
   isFriendly: 0
   isBase: 1
@@ -10741,7 +10927,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.27796054, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10752,7 +10938,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.6659217, y: 5.24}
   m_EdgeRadius: 0
 --- !u!212 &1189784620
 SpriteRenderer:
@@ -10962,7 +11148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f83c08fe85dcbf4dafebce4216b61f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1100
+  maxHealth: 1500
   currentHealth: 0
   isFriendly: 0
   isBase: 1
@@ -11043,7 +11229,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.27796054, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11054,7 +11240,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.6659217, y: 5.24}
   m_EdgeRadius: 0
 --- !u!212 &1221432426
 SpriteRenderer:
@@ -11723,7 +11909,7 @@ Transform:
   m_GameObject: {fileID: 1380863400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.44, y: -3.52, z: 0}
+  m_LocalPosition: {x: 10.92, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11839,25 +12025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08a817cc1309b284b8b12217e0e046af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopPrefabs:
-  - {fileID: 6645336399591549337, guid: a887b92acda4e8a40a3144f9c02b9b28, type: 3}
-  - {fileID: 4967189520231618048, guid: 56d2bdf6082a1264e9d9c5ed68b8787c, type: 3}
-  - {fileID: 2938168158809258656, guid: 8aacd0c6ad52f874da100526e05aae07, type: 3}
-  - {fileID: 1566076579597890437, guid: 9d794407be0e2bd49acff48c4fc571a9, type: 3}
-  - {fileID: 4754725048910426373, guid: 0dab616e4da1e9f4c83a44f13d78ac73, type: 3}
-  - {fileID: 4179205094165963475, guid: 4a82c4ad07b604e47ab32bb09be68415, type: 3}
-  - {fileID: 2293539067894234945, guid: 89eef079680e60347b512b431966e40c, type: 3}
-  - {fileID: 3451138615525407562, guid: 821437d5e20f92242a55278c419947eb, type: 3}
-  - {fileID: 6450038020960594214, guid: f1d03eb1e4d3f304da90c74a8334ea1d, type: 3}
-  - {fileID: 8556782875790510072, guid: 3c3d602911904a04c841e619990e783c, type: 3}
-  - {fileID: 2153749902859778590, guid: 1ac291548af3481429341c5117821569, type: 3}
-  - {fileID: 5773169992310793941, guid: ae65b4676742fcc4e9f6c815c1ae0d8c, type: 3}
-  - {fileID: 2732821451954402924, guid: 6545d4f096ecb6f42bb13179b4c42fd2, type: 3}
-  - {fileID: 860421983307235002, guid: f59bac2101c83524ca105c06f0a5de86, type: 3}
-  - {fileID: 4368655337526250234, guid: 2dcb9299c0a6d1f44bc41c2b6c8bc328, type: 3}
-  - {fileID: 802643881912518161, guid: 2fe8756054c9ba84cb20c542ac5f25c8, type: 3}
-  troopIDInputField: {fileID: 0}
-  spawnButton: {fileID: 0}
 --- !u!1 &1384538996
 GameObject:
   m_ObjectHideFlags: 0
@@ -12805,6 +12972,7 @@ GameObject:
   - component: {fileID: 1614460328}
   - component: {fileID: 1614460327}
   - component: {fileID: 1614460330}
+  - component: {fileID: 1614460331}
   m_Layer: 5
   m_Name: LKYButton
   m_TagString: Untagged
@@ -12926,7 +13094,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Lee Kuan Yew -$x
+  hoverMessage: Lee Kuan Yew -$7000
+--- !u!114 &1614460331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614460325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 1614460327}
+  cooldownTime: 3
 --- !u!1 &1627597251
 GameObject:
   m_ObjectHideFlags: 0
@@ -13024,6 +13206,7 @@ GameObject:
   - component: {fileID: 1628817282}
   - component: {fileID: 1628817281}
   - component: {fileID: 1628817284}
+  - component: {fileID: 1628817285}
   m_Layer: 5
   m_Name: InfSoldierButton
   m_TagString: Untagged
@@ -13145,7 +13328,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Infantry Soldier - $x
+  hoverMessage: Infantry Soldier - $5000
+--- !u!114 &1628817285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628817279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 1628817281}
+  cooldownTime: 2
 --- !u!1 &1641992644
 GameObject:
   m_ObjectHideFlags: 0
@@ -13270,6 +13467,7 @@ GameObject:
   - component: {fileID: 1678843242}
   - component: {fileID: 1678843241}
   - component: {fileID: 1678843244}
+  - component: {fileID: 1678843245}
   m_Layer: 5
   m_Name: RiflemanButton
   m_TagString: Untagged
@@ -13391,7 +13589,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Rifleman - $x
+  hoverMessage: Rifleman - $75
+--- !u!114 &1678843245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678843239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 1678843241}
+  cooldownTime: 1.5
 --- !u!1 &1711280172
 GameObject:
   m_ObjectHideFlags: 0
@@ -13441,7 +13653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f83c08fe85dcbf4dafebce4216b61f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3000
+  maxHealth: 5000
   currentHealth: 0
   isFriendly: 0
   isBase: 1
@@ -13522,7 +13734,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.2720461, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -13533,7 +13745,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.654093, y: 5.24}
   m_EdgeRadius: 0
 --- !u!212 &1711280178
 SpriteRenderer:
@@ -14106,6 +14318,7 @@ GameObject:
   - component: {fileID: 1790436308}
   - component: {fileID: 1790436307}
   - component: {fileID: 1790436310}
+  - component: {fileID: 1790436311}
   m_Layer: 5
   m_Name: LionButton
   m_TagString: Untagged
@@ -14227,7 +14440,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Lion - $x
+  hoverMessage: Lion - $100
+--- !u!114 &1790436311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790436305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 1790436307}
+  cooldownTime: 1.5
 --- !u!1 &1795607283
 GameObject:
   m_ObjectHideFlags: 0
@@ -14770,6 +14997,7 @@ GameObject:
   - component: {fileID: 1940083519}
   - component: {fileID: 1940083518}
   - component: {fileID: 1940083521}
+  - component: {fileID: 1940083522}
   m_Layer: 5
   m_Name: FishermanButton
   m_TagString: Untagged
@@ -14891,7 +15119,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hoverText: {fileID: 1814347509}
-  hoverMessage: Fisherman - $x
+  hoverMessage: Fisherman - $15
+--- !u!114 &1940083522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940083516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe220312056288942a2ee791f2f7268d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetButton: {fileID: 1940083518}
+  cooldownTime: 1
 --- !u!1 &1949434381
 GameObject:
   m_ObjectHideFlags: 0
@@ -15303,7 +15545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f83c08fe85dcbf4dafebce4216b61f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4000
+  maxHealth: 7500
   currentHealth: 0
   isFriendly: 0
   isBase: 1
@@ -15384,7 +15626,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.27796078, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -15395,7 +15637,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.665921, y: 5.24}
   m_EdgeRadius: 0
 --- !u!212 &1970072698
 SpriteRenderer:
@@ -17064,7 +17306,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.2778573, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17075,7 +17317,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.6657143, y: 5.24}
   m_EdgeRadius: 0
 --- !u!114 &2574036885813017229
 MonoBehaviour:
@@ -17139,7 +17381,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.28943372, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17150,7 +17392,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.688867, y: 5.24}
   m_EdgeRadius: 0
 --- !u!224 &2799779443747373041
 RectTransform:
@@ -17929,7 +18171,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.2778573, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17940,7 +18182,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.6657143, y: 5.24}
   m_EdgeRadius: 0
 --- !u!114 &5799874460910584093
 MonoBehaviour:
@@ -18732,7 +18974,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.30096054, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18743,7 +18985,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.11, y: 5.24}
+  m_Size: {x: 7.7119217, y: 5.24}
   m_EdgeRadius: 0
 --- !u!1 &7988638102837933084
 GameObject:

@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  damage: 500
+  damage: 4500
   timeToLive: 40
   targetDirection: {x: 0, y: 0, z: 0}
   isFriendlyProjectile: 1

@@ -16,6 +16,7 @@ public class turretDeployment : MonoBehaviour
     public GameObject MainController;
     public CurrencyScript currencyScript;
     public ExperienceScript experienceScript;
+    public float[] spotCost = { 1000, 5000, 25000 };
 
     void Start()
     {
@@ -66,7 +67,7 @@ public class turretDeployment : MonoBehaviour
         {
             // Check if cost of the spot is met
             CharacterCurrency characterCurrency = turretTowers[currentAge].GetComponent<CharacterCurrency>();
-            float cost = characterCurrency.deployCost;
+            float cost = spotCost[numOfTurretSpots];
 
             if (CurrencyScript.zpDollar >= cost)
             {

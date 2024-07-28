@@ -59,66 +59,66 @@ public class Enemy_AI : MonoBehaviour
     public void Protocol_age1()
     {
         unit_level = 0;
-        StartCoroutine(upgrade_unity_level(15));
-        StartCoroutine(upgrade_unity_level(50));
-        StartCoroutine(upgrade_age(80));
+        StartCoroutine(upgrade_unity_level(30));
+        StartCoroutine(upgrade_unity_level(100));
+        StartCoroutine(upgrade_age(160));
 
-        StartCoroutine(buy_turret(40, 0)); // create age1 turret after 4000 frames 
+        StartCoroutine(buy_turret(80, 0)); // create age1 turret after 4000 frames 
     }
     public void Protocol_age2()
     {
         unit_level = 0;
-        StartCoroutine(upgrade_unity_level(150));
-        StartCoroutine(upgrade_unity_level(500));
-        StartCoroutine(upgrade_age(800));
+        StartCoroutine(upgrade_unity_level(30));
+        StartCoroutine(upgrade_unity_level(100));
+        StartCoroutine(upgrade_age(160));
 
-        StartCoroutine(sell_turret(95, 0)); // sell age1 turret at first slot
-        StartCoroutine(buy_turret(100, 0)); // create age2 turret at first slot
+        StartCoroutine(sell_turret(90, 0)); // sell age1 turret at first slot
+        StartCoroutine(buy_turret(95, 0)); // create age2 turret at first slot
 
-        StartCoroutine(buy_turret(600, 1)); // create age2 turret at second slot
+        StartCoroutine(buy_turret(150, 1)); // create age2 turret at second slot
     }
     public void Protocol_age3()
     {
 
         unit_level = 0;
-        StartCoroutine(upgrade_unity_level(150));
-        StartCoroutine(upgrade_unity_level(500));
-        StartCoroutine(upgrade_age(800));
+        StartCoroutine(upgrade_unity_level(30));
+        StartCoroutine(upgrade_unity_level(100));
+        StartCoroutine(upgrade_age(160));
 
-        StartCoroutine(sell_turret(95, 0)); // sell age2 turret at first slot
-        StartCoroutine(buy_turret(100, 0)); // create age3 turret at first slot
+        StartCoroutine(sell_turret(90, 0)); // sell age2 turret at first slot
+        StartCoroutine(buy_turret(95, 0)); // create age3 turret at first slot
 
-        StartCoroutine(sell_turret(395, 1)); // sell age2 turret at second slot
-        StartCoroutine(buy_turret(400, 1)); // create age3 turret at second slot
+        StartCoroutine(sell_turret(140, 1)); // sell age2 turret at second slot
+        StartCoroutine(buy_turret(145, 1)); // create age3 turret at second slot
 
     }
     public void Protocol_age4()
     {
         unit_level = 0;
-        StartCoroutine(upgrade_unity_level(150));
-        StartCoroutine(upgrade_unity_level(500));
-        StartCoroutine(upgrade_age(800));
+        StartCoroutine(upgrade_unity_level(30));
+        StartCoroutine(upgrade_unity_level(100));
+        StartCoroutine(upgrade_age(160));
 
-        StartCoroutine(sell_turret(495, 0)); // sell age3 turret at first slot
-        StartCoroutine(buy_turret(500, 0)); // create age4 turret at first slot
+        StartCoroutine(sell_turret(90, 0)); // sell age3 turret at first slot
+        StartCoroutine(buy_turret(95, 0)); // create age4 turret at first slot
 
-        StartCoroutine(sell_turret(695, 1)); // sell age3 turret at second slot
-        StartCoroutine(buy_turret(700, 1)); // create age4 turret at second slot
+        StartCoroutine(sell_turret(140, 1)); // sell age3 turret at second slot
+        StartCoroutine(buy_turret(145, 1)); // create age4 turret at second slot
     }
     public void Protocol_age5()
     {
         unit_level = 0;
-        StartCoroutine(upgrade_unity_level(150));
-        StartCoroutine(upgrade_unity_level(500));
-        StartCoroutine(upgrade_unity_level(1500));
+        StartCoroutine(upgrade_unity_level(30));
+        StartCoroutine(upgrade_unity_level(100));
+        StartCoroutine(upgrade_unity_level(300));
 
-        StartCoroutine(sell_turret(1200, 0)); // sell age4 turret at first slot
-        StartCoroutine(buy_turret(1205, 0)); // create age5 turret at first slot
+        StartCoroutine(sell_turret(240, 0)); // sell age4 turret at first slot
+        StartCoroutine(buy_turret(245, 0)); // create age5 turret at first slot
 
-        StartCoroutine(sell_turret(2000, 1)); // sell age4 turret at second slot
-        StartCoroutine(buy_turret(2005, 1)); // create age5 turret at second slot
+        StartCoroutine(sell_turret(400, 1)); // sell age4 turret at second slot
+        StartCoroutine(buy_turret(405, 1)); // create age5 turret at second slot
 
-        StartCoroutine(buy_turret(3505, 2)); // create age5 turret at third slot
+        StartCoroutine(buy_turret(700, 2)); // create age5 turret at third slot
     }
 
 
@@ -243,8 +243,8 @@ public class Enemy_AI : MonoBehaviour
 
     IEnumerator Spawn_troops()
     {
-        yield return new WaitForSeconds(1f);
-        float spawn = Random.Range(0f, 1f);
+        yield return new WaitForSeconds(0.5f);
+        float spawn = Random.Range(0f, 0.5f);
         if (spawn < 0.3f)
         {
             //print("spawned");

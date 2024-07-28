@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExperienceScript : MonoBehaviour
 {
-    public float[] experience = {200, 400, 600, 800, 1000};
+    public float[] experience = {4000, 14000, 45000, 200000, 1000000};
     public int currentAge = 0;
 
     public bool upgradeAge()

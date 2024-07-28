@@ -29,7 +29,7 @@ public class CharacterHealth : MonoBehaviour
 
         CharacterCurrency = GetComponent<CharacterCurrency>();
         CharacterAttack = GetComponent<CharacterAttack>();
-        if (CharacterAttack != null )
+        if (CharacterAttack != null)
         {
             isFriendly = CharacterAttack.isFriendly;
         }
@@ -97,7 +97,7 @@ public class CharacterHealth : MonoBehaviour
                 // Instantiate money pop up based on value
                 GameObject popup = Instantiate(popUpTextPrefab, gameObject.transform.position + healthBarOffset, Quaternion.identity);
                 Destroy(popup, 1.5f); // Destory the popup after delay
-                PopUpTextController popupController = popup.GetComponentInChildren<PopUpTextController>(); 
+                PopUpTextController popupController = popup.GetComponentInChildren<PopUpTextController>();
                 if (popupController != null)
                 {
                     popupController.SetText("+$" + CharacterCurrency.moneyDropped);

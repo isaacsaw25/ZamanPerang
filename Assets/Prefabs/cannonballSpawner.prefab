@@ -100,4 +100,4 @@ MonoBehaviour:
   bombPrefab: {fileID: 6514099935980111315, guid: 76456b952cdd86247a87ee11c326d169, type: 3}
   bombDropInterval: 1
   speed: 1.5
-  endPoint: {x: 11, y: 0, z: 0}
+  endPoint: {x: 9, y: 0, z: 0}

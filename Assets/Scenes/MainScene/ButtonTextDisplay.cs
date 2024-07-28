@@ -7,8 +7,6 @@ public class ButtonTextDisplay : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public TextMeshProUGUI hoverText; // Assign this in the Unity Inspector
     public string hoverMessage; // Assign the hover message for this button
 
-    
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (hoverText != null)

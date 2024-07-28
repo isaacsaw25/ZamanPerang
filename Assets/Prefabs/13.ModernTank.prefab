@@ -175,10 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 499b76db5df5f554aa740de4eae83de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkRate: 3
-  fireRate: 3
-  meleeDamage: 100
-  rangedDamage: 100
+  atkRate: 1
+  fireRate: 0.7
+  meleeDamage: 130
+  rangedDamage: 80
   projectilePrefab: {fileID: 8677127639226697911, guid: cb110b4ae08531444a75be842e4a45c6, type: 3}
   firePoint: {fileID: 0}
   isFriendly: 1
@@ -216,7 +216,7 @@ MonoBehaviour:
   isFriendly: 1
   isBase: 0
   healthBarOffset: {x: 0, y: 1.2, z: 0}
-  healthBarPrefab: {fileID: 7138164844654028079, guid: 529b7cbd86d024942850c1b6a5ee3730, type: 3}
+  healthBarPrefab: {fileID: 7138164844654028079, guid: 2e016d57b36c53a4dbcec86b529936d0, type: 3}
   popUpTextPrefab: {fileID: 6712670967160523263, guid: 66d56d74a44bad34aa7f6319a7d8647d, type: 3}
   difficultyMultiplier: 1
 --- !u!114 &1295113978054216460
@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 982b0ada77b809f449ef57eefed95be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deployCost: 20
-  moneyDropped: 20
-  expDropped: 200
+  deployCost: 6000
+  moneyDropped: 7200
+  expDropped: 8000
+  sellCost: 0

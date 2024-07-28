@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 982b0ada77b809f449ef57eefed95be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deployCost: 20
+  deployCost: 0
   moneyDropped: 0
   expDropped: 0
   sellCost: 0

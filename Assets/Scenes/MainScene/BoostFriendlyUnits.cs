@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class BoostFriendlyUnits : MonoBehaviour
 {
     public LayerMask friendlyLayer; // Assign the layer mask for friendly units in the inspector
-    public float healthBoost = 2; // Amount to boost health
-    public float damageBoost = 2; // Amount to boost damage
+    public float boostRatio = 1.2f; // The ratio for boosting health and damage
 
     public void Activate()
     {
@@ -40,14 +39,14 @@ public class BoostFriendlyUnits : MonoBehaviour
         var healthComponent = unit.GetComponent<CharacterHealth>();
         if (healthComponent != null)
         {
-            healthComponent.currentHealth *= healthBoost;
+            healthComponent.currentHealth *= boostRatio;
         }
 
         var damageComponent = unit.GetComponent<CharacterAttack>();
         if (damageComponent != null)
         {
-            damageComponent.rangedDamage *= damageBoost;
-            damageComponent.meleeDamage *= damageBoost;
+            damageComponent.rangedDamage *= boostRatio;
+            damageComponent.meleeDamage *= boostRatio;
         }
     }
 }
